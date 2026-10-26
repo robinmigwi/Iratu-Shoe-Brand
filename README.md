@@ -20,7 +20,7 @@ The `Irratu/` directory contains the reference photography. The website maps the
 - Mũgendi brown: `Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png`
 - Mũgendi black: `Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png`
 
-Important: the Mũthuri reference images come from the MAMLAKA reference product page. Use them for development only unless you have rights to use them commercially. Before launch, replace these with original Iratu photographs of the actual shoes made by the artisan. The two tone images should also be checked against the final make and colour combination.
+Important: these are reference images, not verified Iratu product photography. Before public launch, replace every image with original photographs of the actual Iratu shoes, or obtain clear permission for commercial use. Confirm that each picture accurately represents the final style, colour, construction and finish.
 
 ## Ordering setup
 
