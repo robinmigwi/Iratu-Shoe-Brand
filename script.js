@@ -10,21 +10,20 @@
       name: "Mũthuri",
       description: "The woven leather loafer",
       images: {
-        brown: "assets/muthuri-woven-brown.png",
-        black: "assets/muthuri-woven-black.png"
+        brown: "Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png",
+        black: "Irratu/bfdf848a-4d2f-4869-9ddc-ba743b9d4e68(1).png"
       }
     },
     mugendi: {
       name: "Mũgendi",
       description: "The two tone leather loafer",
       images: {
-        brown: "assets/mugendi-two-tone-brown.png",
-        black: "assets/mugendi-two-tone-black.png"
+        brown: "Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png",
+        black: "Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png"
       }
     }
   };
 
-  const MUTHURI_BROWN_REFERENCE = "https://kioongozileather.com/cdn/shop/files/bfdf848a-4d2f-4869-9ddc-ba743b9d4e68.png?v=1789981226";
   const orderDialog = document.getElementById("order-dialog");
   const orderForm = document.getElementById("order-form");
   const modelSelect = document.getElementById("order-model");
@@ -36,7 +35,7 @@
     if (!details || !details.images[colour]) return;
 
     img.dataset.fallbackUsed = "";
-    img.dataset.fallback = model === "muthuri" && colour === "brown" ? MUTHURI_BROWN_REFERENCE : "";
+    img.dataset.fallback = "";
     img.classList.remove("is-loaded");
     img.hidden = false;
     img.src = details.images[colour];
