@@ -3,7 +3,7 @@
 
   // Add Iratu's WhatsApp Business number before launch. Use international digits only,
   // for example "2547XXXXXXXX" (do not include +, spaces or dashes).
-  const WHATSAPP_NUMBER = "";
+  const WHATSAPP_NUMBER = "254725359390";
 
   const PRODUCT_INFO = {
     muthuri: {
