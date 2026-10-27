@@ -5,77 +5,65 @@
   const WHATSAPP_NUMBER = "254725359390";
   const PRICE = "KSh 4,000";
 
+  // Single source of truth for the products. Keep image paths in step with the radio
+  // buttons' data-src attributes in index.html.
   const MODELS = {
-    muthuri: { name: "Mũthuri", description: "Woven leather loafer" },
-    mugendi: { name: "Mũgendi", description: "Two tone leather loafer" }
+    muthuri: {
+      name: "Mũthuri",
+      description: "Woven leather loafer",
+      images: {
+        brown: "Irratu/optimized/muthuri-brown.webp",
+        black: "Irratu/optimized/muthuri-black.webp"
+      }
+    },
+    mugendi: {
+      name: "Mũgendi",
+      description: "Two tone leather loafer",
+      images: {
+        brown: "Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png",
+        black: "Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png"
+      }
+    }
   };
   const COLOURS = { brown: "Brown", black: "Black" };
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
-  /* ---------- Search and filters ---------- */
+  /* ---------- Colour selectors ---------- */
 
-  const cards = $$("#product-grid .product");
-  const searchInput = $("#search");
-  const resultCount = $("#result-count");
-  const emptyState = $("#empty-state");
-  const filterState = { query: "", model: "all", colour: "all" };
+  function setColour(chapter, radio) {
+    const model = MODELS[chapter.dataset.style];
+    const colour = radio.value;
+    if (!model || !COLOURS[colour]) return;
 
-  // Lower case and strip accents so "muthuri" finds "Mũthuri".
-  const fold = (text) => text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const img = $("[data-chapter-image]", chapter);
+    const webp = $("source", img.parentElement);
+    if (webp && radio.dataset.webp) webp.srcset = radio.dataset.webp;
+    img.src = radio.dataset.src;
+    img.width = Number(radio.dataset.width) || img.width;
+    img.height = Number(radio.dataset.height) || img.height;
+    img.alt = model.name + " " + model.description.toLowerCase() + " in " + colour;
 
-  const searchText = new Map(cards.map((card) => [card, fold(card.dataset.keywords || "")]));
-
-  function applyFilters() {
-    const terms = fold(filterState.query).split(/\s+/).filter(Boolean);
-    let visible = 0;
-
-    cards.forEach((card) => {
-      const show =
-        (filterState.model === "all" || card.dataset.model === filterState.model) &&
-        (filterState.colour === "all" || card.dataset.colour === filterState.colour) &&
-        terms.every((term) => searchText.get(card).includes(term));
-      card.hidden = !show;
-      if (show) visible += 1;
+    $$("[data-colour-name]", chapter).forEach((el) => {
+      el.textContent = el.closest("legend") ? COLOURS[colour] : colour;
     });
 
-    const noun = (n) => n + (n === 1 ? " pair" : " pairs");
-    resultCount.textContent = visible === cards.length ? noun(cards.length) : visible + " of " + noun(cards.length);
-    emptyState.hidden = visible > 0;
+    const order = $("[data-order]", chapter);
+    order.dataset.colour = colour;
+    order.setAttribute("aria-label", "Order " + model.name + " in " + colour + " on WhatsApp");
   }
 
-  function setChip(group, value) {
-    $$('[data-filter="' + group + '"]').forEach((chip) => {
-      chip.setAttribute("aria-pressed", String(chip.dataset.value === value));
+  $$(".chapter").forEach((chapter) => {
+    $$('input[type="radio"]', chapter).forEach((radio) => {
+      radio.addEventListener("change", () => {
+        if (radio.checked) setColour(chapter, radio);
+      });
     });
-  }
-
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      filterState.query = searchInput.value;
-      applyFilters();
-    });
-  }
-
-  $$("[data-filter]").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const group = chip.dataset.filter === "style" ? "model" : "colour";
-      filterState[group] = chip.dataset.value;
-      setChip(chip.dataset.filter, chip.dataset.value);
-      applyFilters();
-    });
+    // Browsers can restore a previously chosen radio on reload; sync the page to it.
+    const checked = $('input[type="radio"]:checked', chapter);
+    if (checked) setColour(chapter, checked);
   });
-
-  function clearFilters() {
-    filterState.query = "";
-    filterState.model = "all";
-    filterState.colour = "all";
-    if (searchInput) searchInput.value = "";
-    setChip("style", "all");
-    setChip("colour", "all");
-    applyFilters();
-  }
 
   /* ---------- Order dialog ---------- */
 
@@ -89,7 +77,7 @@
   const summaryMeta = $("#order-summary-meta");
   const thumb = $("#order-thumb");
 
-  // Shows which pair is selected, using the photo already on the page.
+  // Shows which pair is selected, using the same photo as the product section.
   function syncSummary() {
     const model = MODELS[modelSelect.value];
     const colour = COLOURS[colourSelect.value];
@@ -97,10 +85,7 @@
 
     summaryName.textContent = model.name + ", " + colour.toLowerCase();
     summaryMeta.textContent = model.description + " · " + PRICE;
-
-    const card = cards.find((c) => c.dataset.model === modelSelect.value && c.dataset.colour === colourSelect.value);
-    const img = card && $("img", card);
-    if (img) thumb.src = img.currentSrc || img.src;
+    thumb.src = model.images[colourSelect.value];
   }
 
   function openOrder(model, colour) {
@@ -132,11 +117,7 @@
       openOrder(orderButton.dataset.model, orderButton.dataset.colour);
       return;
     }
-    if (event.target.closest("[data-close-order]")) {
-      closeOrder();
-      return;
-    }
-    if (event.target.closest("[data-clear]")) clearFilters();
+    if (event.target.closest("[data-close-order]")) closeOrder();
   });
 
   if (dialog) {
@@ -174,7 +155,7 @@
       "Product: " + model.name + " (" + model.description.toLowerCase() + ")",
       "Colour: " + colour,
       "EU size: " + field("size"),
-      "Price: " + PRICE,
+      "Price: " + PRICE + " (delivery charged separately if applicable)",
       "",
       "Name: " + field("name"),
       "Phone / WhatsApp: " + field("phone"),

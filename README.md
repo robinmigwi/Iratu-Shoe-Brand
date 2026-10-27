@@ -1,8 +1,14 @@
 # Iratu
 
-A static, product led store page for Iratu, leather loafers made to order in Kenya. Orders are requests sent over WhatsApp, not automatic payments.
+A static site for Iratu, a Kenyan footwear label starting with two leather loafers. Orders are requests sent over WhatsApp, not automatic payments.
 
-## Products
+## Page structure
+
+Header, image led hero, short collection introduction, one section per style (Mũthuri, then Mũgendi), Behind Iratu, how to order, FAQ, footer, and the order dialog. There is no cart, checkout, stock counter or review system.
+
+## Styles and colours
+
+Each style is one product with a colour selector. Choosing a colour swaps the image and carries into the order form and the WhatsApp message.
 
 | Style | Colour | Image |
 | --- | --- | --- |
@@ -11,23 +17,24 @@ A static, product led store page for Iratu, leather loafers made to order in Ken
 | Mũgendi, two tone leather loafer | Brown | `Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png` |
 | Mũgendi, two tone leather loafer | Black | `Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png` |
 
-KSh 4,000 a pair, EU sizes 39 to 45. Making time is around five days and must be confirmed with each customer before payment.
+KSh 4,000 a pair, EU sizes 39 to 45. Making time is around five days and must be confirmed with each customer before payment. Delivery is charged separately if applicable.
 
 ## Photos
 
-These are temporary reference images, not Iratu's own photography. Replace them with original photos of the actual shoes before a wider launch, or confirm you may use them commercially.
+These are temporary reference images, not Iratu's own photography. The page says so. Replace them with original photos of the actual shoes before a wider launch, or confirm you may use them commercially.
 
-When replacing a photo:
+To replace a photo, update every place its path appears:
 
-1. Change the `src` of the `<img>` for that product in `index.html`.
-2. The two Mũthuri photos are wrapped in `<picture>` with a lighter WebP copy in `Irratu/optimized/`. Replace or remove that `<source>` too, otherwise browsers will keep showing the old WebP.
-3. Square photos work best. Images are shown contained in a square frame, never cropped or stretched.
+1. The `<img>` for that product in `index.html` (hero and style section).
+2. The matching radio button's `data-src` (and `data-webp` for Mũthuri) in `index.html`.
+3. The `images` entry for that style and colour in `MODELS` in `script.js`. The order dialog thumbnail uses it.
+4. The two Mũthuri photos also have a lighter WebP copy in `Irratu/optimized/`. Replace or remove those, or browsers will keep showing the old WebP.
 
-The two Mũgendi images are only 180 to 240 px wide and will look soft on large or high density screens. Real photography at around 1000 px fixes this.
+Square photos work best. Images are contained in a square frame and never cropped or stretched. The two Mũgendi images are only 180 to 240 px wide and look soft when large. Real photography at around 1000 px fixes this.
 
 ## Ordering
 
-Open `script.js` to change `WHATSAPP_NUMBER` (international digits, no plus sign). Product names and descriptions used in the WhatsApp message are in `MODELS` at the top of the same file.
+Open `script.js` to change `WHATSAPP_NUMBER` (international digits, no plus sign). The footer link in `index.html` also contains the number.
 
 ## Files
 
@@ -41,4 +48,4 @@ Open `index.html` in a browser, or serve the folder with any static server.
 
 ## Deployment
 
-Static site, suitable for Netlify or GitHub Pages. Not deployed. No social share image is set yet because it needs the final public URL.
+Static site, suitable for Netlify or GitHub Pages. No social share image is set yet because it needs the final public URL.
