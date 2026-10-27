@@ -3,266 +3,324 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eee7d9">
-  <meta name="description" content="Iratu makes leather footwear to order in Kenya. Meet Mũthuri, the woven loafer, and Mũgendi, the two tone loafer.">
-  <meta property="og:title" content="Iratu — Handcrafted leather footwear">
-  <meta property="og:description" content="Two characters. Four ways to wear them. Leather footwear made to order in Kenya.">
+  <meta name="theme-color" content="#f3eee5">
+  <title>Iratu: leather shoes, made in Kenya</title>
+  <meta name="description" content="Iratu is a Kenyan footwear label starting with two leather loafers, Mũthuri and Mũgendi, in brown or black. KSh 4,000 a pair, EU sizes 39 to 45, made to order.">
+  <meta property="og:title" content="Iratu: leather shoes, made in Kenya">
+  <meta property="og:description" content="Two leather loafers, each in brown or black. Made to order in Kenya.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://kioongozileather.com/cdn/shop/files/8c1c5d15-5226-4956-ace5-365e1dfa0029.png?v=1789981226">
-  <title>Iratu — Handcrafted leather footwear</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23211e1a'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='24' text-anchor='middle' fill='%23f3eee5'%3EI%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Irratu/optimized/muthuri-brown.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announcement">
-    <span>Made by hand in Kenya</span>
-    <span class="announcement-separator" aria-hidden="true">✳</span>
-    <span>Made to order · Sizes 39–45</span>
-  </div>
-
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Iratu homepage">
-      <span class="wordmark-name">IRATU<span class="wordmark-dot">.</span></span>
-      <span class="wordmark-caption">FOOTWEAR, WITH CHARACTER</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-      <span></span><span></span>
-    </button>
-    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-      <a href="#collection">The collection</a>
-      <a href="#story">Our story</a>
-      <a href="#process">How it is made</a>
-      <button class="nav-order" type="button" data-open-order>Order a pair <span aria-hidden="true">↗</span></button>
-    </nav>
+    <div class="wrap header-inner">
+      <a class="wordmark" href="#top" aria-label="Iratu, back to top">Iratu</a>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main">
+        <a href="#collection">Collection</a>
+        <a href="#story">Story</a>
+        <a href="#how-to-order">How to order</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <button class="btn btn-outline btn-small header-order" type="button" data-order>Order</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
   </header>
 
   <main id="main">
-    <section class="hero section-shell" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> FIRST COLLECTION · NO. 01</p>
-        <h1>Good shoes.<br><em>Grounded</em> in craft.</h1>
-        <p class="hero-description">Leather footwear made by skilled hands in Kenya. Built around thoughtful details, made one pair at a time, and given a character of its own.</p>
-        <div class="hero-actions">
-          <a class="button button-dark" href="#collection">Meet the first pair <span aria-hidden="true">↘</span></a>
-          <a class="text-link" href="#story">Why Iratu exists <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-proof">
-          <div class="proof-mark" aria-hidden="true">I.</div>
-          <p><strong>Local hands. Considered design.</strong><br><span>Made to order, never mass produced.</span></p>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <div class="hero-art-topline"><span>IRATU / OBJECTS OF CHARACTER</span><span>01 — 02</span></div>
-        <div class="hero-image-backdrop"></div>
-        <div class="hero-image-frame">
-          <div class="product-image-wrap hero-product-image" data-photo-wrap>
-            <div class="photo-placeholder hero-placeholder">
-              <span class="placeholder-mark">I.</span>
-              <span>MŨTHURI / THE WOVEN LOAFER</span>
-            </div>
-            <img class="product-photo" src="Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png" alt="Brown woven leather double sole loafer, the Mũthuri reference shoe" fetchpriority="high">
+    <!-- Hero -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-label">Iratu is the Gĩkũyũ word for shoes</p>
+          <h1 id="hero-title">Leather shoes, made in Kenya.</h1>
+          <p class="hero-text">Iratu is a small Kenyan footwear label. We are starting with two leather loafers, Mũthuri and Mũgendi, each in brown or black. Every pair is made to order.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#collection">Explore the collection</a>
+            <a class="text-link" href="#story">The story behind Iratu</a>
           </div>
+          <p class="hero-meta">Made to order · KSh 4,000 a pair · EU 39 to 45</p>
         </div>
-        <div class="hero-sticker"><span class="sticker-star" aria-hidden="true">✳</span><span>CRAFTED<br>IN KENYA</span></div>
-        <div class="hero-art-bottomline"><span>THE WOVEN LOAFER</span><span>KSh 4,000</span></div>
-      </div>
-    </section>
 
-    <section class="ticker" aria-label="Iratu details">
-      <div class="ticker-track">
-        <span>Leather footwear</span><b aria-hidden="true">✳</b><span>Made in Kenya</span><b aria-hidden="true">✳</b><span>Made to order</span><b aria-hidden="true">✳</b><span>Sizes 39–45</span><b aria-hidden="true">✳</b><span>Leather footwear</span><b aria-hidden="true">✳</b><span>Made in Kenya</span><b aria-hidden="true">✳</b>
+        <div class="hero-images">
+          <a class="hero-tile hero-tile-a" href="#muthuri">
+            <span class="hero-photo">
+              <picture>
+                <source srcset="Irratu/optimized/muthuri-brown.webp" type="image/webp">
+                <img src="Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png" alt="Mũthuri woven leather loafer in brown" width="1254" height="1254" fetchpriority="high" decoding="async">
+              </picture>
+            </span>
+            <span class="hero-caption"><strong>Mũthuri</strong> Woven loafer</span>
+          </a>
+          <a class="hero-tile hero-tile-b" href="#mugendi">
+            <span class="hero-photo">
+              <img src="Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png" alt="Mũgendi two tone leather loafer in black" width="240" height="240" decoding="async">
+            </span>
+            <span class="hero-caption"><strong>Mũgendi</strong> Two tone loafer</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="collection section-shell section-padding" id="collection">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow"><span class="eyebrow-line"></span> THE FIRST COLLECTION</p>
-          <h2>Two characters.<br><em>Your kind of step.</em></h2>
+    <!-- Collection introduction -->
+    <section class="intro wrap" id="collection" aria-labelledby="collection-title">
+      <div class="intro-grid">
+        <h2 id="collection-title" class="section-title">The first collection</h2>
+        <div class="intro-copy">
+          <p class="intro-lede">Two loafers, each in brown or black, made to order in Kenya.</p>
+          <p>KSh 4,000 a pair, in EU sizes 39 to 45. Making time is around five days and is confirmed with you before you pay.</p>
+          <p class="intro-links"><a href="#muthuri">Mũthuri, the woven loafer</a><a href="#mugendi">Mũgendi, the two tone loafer</a></p>
         </div>
-        <p class="section-intro">Start with the woven classic or take the road less ordinary with two tone. Each style comes in brown and black, made for you after you order.</p>
       </div>
-
-      <div class="product-grid">
-        <article class="product-card" data-product-card="muthuri">
-          <div class="card-image-area">
-            <div class="card-index">01 / THE CLASSIC</div>
-            <div class="product-image-wrap" data-photo-wrap>
-              <div class="photo-placeholder">
-                <span class="placeholder-mark">I.</span>
-                <span>MŨTHURI / WOVEN LEATHER</span>
-              </div>
-              <img class="product-photo" src="Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png" alt="Mũthuri brown woven leather loafer" loading="lazy">
-            </div>
-            <span class="image-note">01 — WOVEN LEATHER</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-title-row">
-              <div><p class="character-kicker">THE CLASSIC MAN</p><h3>Mũthuri</h3></div>
-              <p class="product-price">KSh 4,000</p>
-            </div>
-            <p class="product-description">Quiet confidence, woven into every detail. A timeless shape with a textured leather upper and a substantial double sole.</p>
-            <div class="product-options">
-              <div class="colour-picker" role="group" aria-label="Choose Mũthuri colour">
-                <button class="colour-choice is-selected" type="button" data-model="muthuri" data-colour="brown" aria-pressed="true"><span class="swatch swatch-brown"></span>Brown</button>
-                <button class="colour-choice" type="button" data-model="muthuri" data-colour="black" aria-pressed="false"><span class="swatch swatch-black"></span>Black</button>
-              </div>
-              <span class="size-note">EU 39–45</span>
-            </div>
-            <button class="button button-outline product-order" type="button" data-order-product="muthuri" data-order-colour="brown">Order Mũthuri <span aria-hidden="true">↗</span></button>
-          </div>
-        </article>
-
-        <article class="product-card" data-product-card="mugendi">
-          <div class="card-image-area card-image-two-tone">
-            <div class="card-index">02 / THE EXPLORER</div>
-            <div class="product-image-wrap" data-photo-wrap>
-              <div class="photo-placeholder">
-                <span class="placeholder-mark">I.</span>
-                <span>MŨGENDI / TWO TONE</span>
-              </div>
-              <img class="product-photo" src="Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png" alt="Mũgendi two tone leather loafer in brown" loading="lazy">
-            </div>
-            <span class="image-note">02 — TWO TONE LEATHER</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-title-row">
-              <div><p class="character-kicker">THE TRAVELLER</p><h3>Mũgendi</h3></div>
-              <p class="product-price">KSh 4,000</p>
-            </div>
-            <p class="product-description">For the one who is always going somewhere. Contrasting tones bring a little more character to a familiar silhouette.</p>
-            <div class="product-options">
-              <div class="colour-picker" role="group" aria-label="Choose Mũgendi colour">
-                <button class="colour-choice is-selected" type="button" data-model="mugendi" data-colour="brown" aria-pressed="true"><span class="swatch swatch-two-brown"></span>Brown</button>
-                <button class="colour-choice" type="button" data-model="mugendi" data-colour="black" aria-pressed="false"><span class="swatch swatch-two-black"></span>Black</button>
-              </div>
-              <span class="size-note">EU 39–45</span>
-            </div>
-            <button class="button button-outline product-order" type="button" data-order-product="mugendi" data-order-colour="brown">Order Mũgendi <span aria-hidden="true">↗</span></button>
-          </div>
-        </article>
-      </div>
-      <p class="collection-footnote"><span aria-hidden="true">✳</span> Every pair is made to order. We confirm the production window and delivery details before payment.</p>
     </section>
 
-    <section class="story-section" id="story">
-      <div class="story-inner section-shell">
-        <div class="story-art" aria-hidden="true">
-          <div class="story-art-top"><span>IRATU / OUR REASON</span><span>EST. 2026</span></div>
-          <div class="story-art-circle"><span>MADE</span><span>WITH</span><span>INTENTION</span></div>
-          <div class="story-art-bottom"><span>FROM LOCAL HANDS</span><span>TO YOUR EVERYDAY</span></div>
+    <!-- Mũthuri -->
+    <section class="chapter chapter-muthuri" id="muthuri" aria-labelledby="muthuri-title" data-style="muthuri">
+      <div class="wrap chapter-grid">
+        <figure class="chapter-figure">
+          <div class="chapter-image">
+            <picture>
+              <source srcset="Irratu/optimized/muthuri-brown.webp" type="image/webp">
+              <img src="Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png" alt="Mũthuri woven leather loafer in brown" width="1254" height="1254" loading="lazy" decoding="async" data-chapter-image>
+            </picture>
+          </div>
+          <figcaption>Mũthuri in <span data-colour-name>brown</span>. Reference photo.</figcaption>
+        </figure>
+
+        <div class="chapter-copy">
+          <p class="chapter-label">The woven loafer</p>
+          <h2 id="muthuri-title" class="chapter-title">Mũthuri</h2>
+          <p>Mũthuri is the loafer with the woven front. A panel of woven leather runs across the top of the shoe, with a smooth strap over it and plain leather around the rest. The sole is thick, which gives the shoe a solid look.</p>
+          <p>It is the more understated of the two styles, and the one Iratu started with.</p>
+
+          <fieldset class="colour-select">
+            <legend>Colour: <strong data-colour-name>Brown</strong></legend>
+            <div class="swatches">
+              <div class="swatch">
+                <input type="radio" name="muthuri-colour" id="muthuri-brown" value="brown" checked data-src="Irratu/8c1c5d15-5226-4956-ace5-365e1dfa0029.png" data-webp="Irratu/optimized/muthuri-brown.webp" data-width="1254" data-height="1254">
+                <label for="muthuri-brown"><span class="swatch-dot swatch-brown" aria-hidden="true"></span>Brown</label>
+              </div>
+              <div class="swatch">
+                <input type="radio" name="muthuri-colour" id="muthuri-black" value="black" data-src="Irratu/bfdf848a-4d2f-4869-9ddc-ba743b9d4e68(1).png" data-webp="Irratu/optimized/muthuri-black.webp" data-width="1254" data-height="1254">
+                <label for="muthuri-black"><span class="swatch-dot swatch-black" aria-hidden="true"></span>Black</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <dl class="spec">
+            <div><dt>Price</dt><dd>KSh 4,000 a pair, either colour</dd></div>
+            <div><dt>Sizes</dt><dd>EU 39 to 45</dd></div>
+            <div><dt>Making time</dt><dd>Around five days, confirmed before payment</dd></div>
+          </dl>
+
+          <div class="buy-row">
+            <p class="buy-price">KSh 4,000</p>
+            <button class="btn btn-solid" type="button" data-order data-model="muthuri" data-colour="brown" aria-label="Order Mũthuri in brown on WhatsApp">Order on WhatsApp</button>
+          </div>
+          <p class="buy-note">Delivery is charged separately if applicable.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Mũgendi -->
+    <section class="chapter chapter-mugendi" id="mugendi" aria-labelledby="mugendi-title" data-style="mugendi">
+      <div class="wrap chapter-grid">
+        <figure class="chapter-figure">
+          <div class="chapter-image">
+            <picture>
+              <img src="Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png" alt="Mũgendi two tone leather loafer in brown" width="180" height="240" loading="lazy" decoding="async" data-chapter-image>
+            </picture>
+          </div>
+          <figcaption>Mũgendi in <span data-colour-name>brown</span>. Reference photo.</figcaption>
+        </figure>
+
+        <div class="chapter-copy">
+          <p class="chapter-label">The two tone loafer</p>
+          <h2 id="mugendi-title" class="chapter-title">Mũgendi</h2>
+          <p>Mũgendi is the two tone loafer. In the photos, the back of the shoe and the strap are dark, and the front panel is white, so there is a clear line of contrast across the middle. You choose whether the dark leather is brown or black.</p>
+          <p>It stands out more than Mũthuri does. The two share the same idea of a loafer with a strap, and differ in how much they show.</p>
+
+          <fieldset class="colour-select">
+            <legend>Colour: <strong data-colour-name>Brown</strong></legend>
+            <div class="swatches">
+              <div class="swatch">
+                <input type="radio" name="mugendi-colour" id="mugendi-brown" value="brown" checked data-src="Irratu/a19f54c3-32ce-4f60-9190-836cd4781630_medium.png" data-width="180" data-height="240">
+                <label for="mugendi-brown"><span class="swatch-dot swatch-two-brown" aria-hidden="true"></span>Brown</label>
+              </div>
+              <div class="swatch">
+                <input type="radio" name="mugendi-colour" id="mugendi-black" value="black" data-src="Irratu/8e389851-5322-4c0b-8ecb-5d7511afa1d9_1_medium.png" data-width="240" data-height="240">
+                <label for="mugendi-black"><span class="swatch-dot swatch-two-black" aria-hidden="true"></span>Black</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <dl class="spec">
+            <div><dt>Price</dt><dd>KSh 4,000 a pair, either colour</dd></div>
+            <div><dt>Sizes</dt><dd>EU 39 to 45</dd></div>
+            <div><dt>Making time</dt><dd>Around five days, confirmed before payment</dd></div>
+          </dl>
+
+          <div class="buy-row">
+            <p class="buy-price">KSh 4,000</p>
+            <button class="btn btn-solid" type="button" data-order data-model="mugendi" data-colour="brown" aria-label="Order Mũgendi in brown on WhatsApp">Order on WhatsApp</button>
+          </div>
+          <p class="buy-note">Delivery is charged separately if applicable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Behind Iratu -->
+    <section class="band" id="story" aria-labelledby="story-title">
+      <div class="wrap band-grid">
+        <h2 id="story-title" class="section-title">Behind Iratu</h2>
         <div class="story-copy">
-          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> A STORY THAT STARTS CLOSE TO HOME</p>
-          <h2>A good pair<br>can change<br><em>the way you see.</em></h2>
-          <p>Iratu started with a pair of shoes made by a local artisan. The quality, the detail and the care in the work prompted a simple question: why shouldn't footwear made here stand confidently alongside the brands we admire elsewhere?</p>
-          <p>We are starting small, with a maker whose work we believe in and two designs we want to put into the world. Each order supports local craft and gives us a chance to get the details right, pair by pair.</p>
-          <a class="text-link text-link-light" href="#process">Get to know the process <span aria-hidden="true">↗</span></a>
+          <p class="story-lede">It started with a pair of shoes.</p>
+          <p>A shoemaker in Kenya made a pair of leather shoes for me. I was impressed by how well they were made, and he can make more to order, so I decided to build a small brand around them.</p>
+          <p>Iratu is the Gĩkũyũ word for shoes. We are starting with two styles, Mũthuri and Mũgendi, each in brown or black. Because every pair is made to order, we make what has been ordered.</p>
+          <p>The photos on this site are reference images for now. We will replace them with photographs of Iratu's own pairs.</p>
         </div>
       </div>
     </section>
 
-    <section class="values section-shell section-padding">
-      <div class="section-heading values-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> WHAT MATTERS TO US</p><h2>Good craft needs<br><em>no loud introduction.</em></h2></div>
-      </div>
-      <div class="values-grid">
-        <article class="value-card"><span class="value-number">01</span><div class="value-symbol value-symbol-weave" aria-hidden="true"><span></span><span></span><span></span><span></span></div><h3>Details you can see</h3><p>Texture, shape and finishing are part of the design, not afterthoughts. We want the shoe to speak before the label does.</p></article>
-        <article class="value-card"><span class="value-number">02</span><div class="value-symbol value-symbol-hands" aria-hidden="true"><span></span><span></span><span></span></div><h3>Made by skilled hands</h3><p>Iratu is built around local shoemaking talent. The people behind the pair deserve credit, fair terms and respect for their work.</p></article>
-        <article class="value-card"><span class="value-number">03</span><div class="value-symbol value-symbol-time" aria-hidden="true">01<span>PAIR</span></div><h3>Made when you order</h3><p>We start with what people want to wear, then make each pair to order instead of guessing and producing stock for a shelf.</p></article>
+    <!-- How ordering works -->
+    <section class="band" id="how-to-order" aria-labelledby="order-heading">
+      <div class="wrap band-grid">
+        <h2 id="order-heading" class="section-title">How to order</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-number">1</span>
+            <h3>Choose a style and colour</h3>
+            <p>Mũthuri or Mũgendi, in brown or black.</p>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <h3>Pick your size</h3>
+            <p>EU 39 to 45. Tell us in the notes if you are unsure.</p>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <h3>Send the request</h3>
+            <p>The form opens WhatsApp with your details ready to send.</p>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <h3>We confirm</h3>
+            <p>We reply to confirm making time, payment and delivery. The order is not confirmed until we do.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="process-section" id="process">
-      <div class="process-inner section-shell">
-        <div class="process-heading">
-          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> THE IRATU WAY</p>
-          <h2>Your pair.<br><em>Made with purpose.</em></h2>
-          <p>We keep the process personal and clear. No mystery about what happens after you press order.</p>
-          <button class="button button-cream" type="button" data-open-order>Start an order <span aria-hidden="true">↗</span></button>
+    <!-- FAQ -->
+    <section class="band" id="faq" aria-labelledby="faq-heading">
+      <div class="wrap band-grid">
+        <h2 id="faq-heading" class="section-title">Questions</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Sizing</summary>
+            <p>Sizes run from EU 39 to 45. Choose your usual EU size in the order form. If you are between sizes or unsure, say so in the notes and we will advise before you pay.</p>
+          </details>
+          <details>
+            <summary>Making time</summary>
+            <p>Around five days is the current estimate. We confirm the making time with you before you pay. It does not include delivery.</p>
+          </details>
+          <details>
+            <summary>Payment</summary>
+            <p>Each pair is KSh 4,000. After you send the request, we reply on WhatsApp with payment details. Nothing is charged through this website.</p>
+          </details>
+          <details>
+            <summary>Delivery</summary>
+            <p>Delivery is charged separately if applicable. We confirm the cost and timing with you directly, based on where you are, and we do not give a delivery date until the making time is confirmed.</p>
+          </details>
+          <details>
+            <summary>Fit and exchanges</summary>
+            <p>We have not published an exchange policy yet. Because each pair is made to order, please ask any fit questions before you pay. We will tell you the exchange terms for your order before payment.</p>
+          </details>
         </div>
-        <div class="process-steps">
-          <article class="process-step"><span class="step-number">01</span><div><h3>Choose your character</h3><p>Pick Mũthuri or Mũgendi, choose brown or black, and select your size from EU 39 to 45.</p></div></article>
-          <article class="process-step"><span class="step-number">02</span><div><h3>We confirm the details</h3><p>We confirm your size, estimated making time, payment terms and delivery cost with you before accepting payment.</p></div></article>
-          <article class="process-step"><span class="step-number">03</span><div><h3>Your pair is made</h3><p>The artisan makes your pair. We check the finish before arranging delivery and sharing the dispatch update.</p></div></article>
-        </div>
       </div>
-    </section>
-
-    <section class="faq-section section-shell section-padding" id="faq">
-      <div class="faq-intro"><p class="eyebrow"><span class="eyebrow-line"></span> BEFORE YOU ORDER</p><h2>Good to<br><em>know.</em></h2><p>Buying online should feel clear. Here is what to expect when ordering a made to order pair from Iratu.</p></div>
-      <div class="faq-list">
-        <details class="faq-item" open><summary>How long does a pair take to make?<span aria-hidden="true">+</span></summary><p>Making time is currently estimated at around five days. We will confirm the actual production window with the maker before we accept your order. Delivery time is separate and depends on your location.</p></details>
-        <details class="faq-item"><summary>Which sizes are available?<span aria-hidden="true">+</span></summary><p>The first collection is planned in EU sizes 39–45. We will help confirm your size before production. If you are between sizes or unsure about fit, tell us before paying so we can advise based on the maker's sizing.</p></details>
-        <details class="faq-item"><summary>What is the price and how do I pay?<span aria-hidden="true">+</span></summary><p>Each style is KSh 4,000 per pair, before any delivery charge. We confirm the order, payment details and delivery cost with you directly before production begins.</p></details>
-        <details class="faq-item"><summary>Can I exchange a pair if it does not fit?<span aria-hidden="true">+</span></summary><p>Please ask us about fit before placing the order. Our final exchange and fault policy will be shared clearly before payment. Do not assume a made to order pair is exchangeable unless we have confirmed the terms with you.</p></details>
-        <details class="faq-item"><summary>Where do you deliver?<span aria-hidden="true">+</span></summary><p>Delivery options and costs will be confirmed when you place your order. We will not promise a delivery date until the production window and courier timing are clear.</p></details>
-      </div>
-    </section>
-
-    <section class="closing-cta">
-      <div class="closing-ornament closing-ornament-left" aria-hidden="true">I.</div>
-      <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> THE FIRST PAIR IS YOURS TO MAKE YOUR OWN</p>
-      <h2>Start with a good<br><em>step forward.</em></h2>
-      <p>Choose your character. We will take care of the details with you.</p>
-      <button class="button button-cream" type="button" data-open-order>Order your pair <span aria-hidden="true">↗</span></button>
-      <div class="closing-ornament closing-ornament-right" aria-hidden="true">✳</div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-main">
-      <a class="wordmark footer-wordmark" href="#top" aria-label="Iratu home"><span class="wordmark-name">IRATU<span class="wordmark-dot">.</span></span><span class="wordmark-caption">FOOTWEAR, WITH CHARACTER</span></a>
-      <p>Handcrafted leather footwear.<br>Rooted in Kenya. Made to go further.</p>
-      <div class="footer-links"><a href="#collection">Shop the collection</a><a href="#story">Our story</a><a href="#faq">Order information</a><button type="button" data-open-order>Place an order ↗</button></div>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="wordmark" href="#top" aria-label="Iratu, back to top">Iratu</a>
+        <p class="footer-line">Leather shoes, made to order in Kenya.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#collection">Collection</a>
+        <a href="#muthuri">Mũthuri</a>
+        <a href="#mugendi">Mũgendi</a>
+        <a href="#story">Story</a>
+        <a href="#how-to-order">How to order</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <p class="footer-contact"><a href="https://wa.me/254725359390">Order on WhatsApp</a></p>
+      <p class="footer-copy">© <span id="year">2026</span> Iratu</p>
     </div>
-    <div class="footer-bottom"><span>© <span id="year">2026</span> Iratu. Made with intention.</span><span>Made to order in Kenya</span><a href="#top">Back to top ↑</a></div>
   </footer>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-title">
-    <div class="dialog-head">
-      <div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR PAIR, YOUR WAY</p><h2 id="order-title">Start an order.</h2></div>
-      <button type="button" class="dialog-close" data-close-order aria-label="Close order form">×</button>
-    </div>
-    <p class="dialog-intro">Share the details below. We will confirm size, production timing, payment and delivery with you before the order is accepted.</p>
-    <form id="order-form">
-      <div class="form-grid">
-        <label class="form-field form-field-full">Choose your character
-          <select name="model" id="order-model" required>
-            <option value="muthuri">Mũthuri — The woven loafer</option>
-            <option value="mugendi">Mũgendi — The two tone loafer</option>
-          </select>
-        </label>
-        <label class="form-field">Colour
-          <select name="colour" id="order-colour" required><option value="Brown">Brown</option><option value="Black">Black</option></select>
-        </label>
-        <label class="form-field">EU shoe size
-          <select name="size" required><option value="">Choose size</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option></select>
-        </label>
-        <label class="form-field form-field-full">Your name
-          <input type="text" name="name" autocomplete="name" placeholder="Name for the order" required>
-        </label>
-        <label class="form-field form-field-full">Your phone / WhatsApp number
-          <input type="tel" name="phone" autocomplete="tel" placeholder="e.g. 07xx xxx xxx" required>
-        </label>
-        <label class="form-field form-field-full">Delivery town or area
-          <input type="text" name="location" autocomplete="address-level2" placeholder="Where should we deliver?" required>
-        </label>
-        <label class="form-field form-field-full">Anything we should know? <span class="optional-label">Optional</span>
-          <textarea name="notes" rows="3" placeholder="Fit questions, preferred timing, or other details"></textarea>
-        </label>
+    <div class="dialog-body">
+      <div class="dialog-head">
+        <h2 id="order-title">Order request</h2>
+        <button type="button" class="dialog-close" data-close-order aria-label="Close order form">Close</button>
       </div>
-      <div class="form-summary"><span>Price per pair</span><strong>KSh 4,000</strong><p>Estimated making time is around five days and will be confirmed with you before payment. Delivery is charged separately if applicable.</p></div>
-      <button class="button button-dark form-submit" type="submit">Continue to WhatsApp <span aria-hidden="true">↗</span></button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      <p class="form-disclaimer">This is an order request, not a confirmed order. We will confirm details and terms with you first.</p>
-    </form>
+
+      <div class="dialog-product">
+        <div class="dialog-thumb"><img id="order-thumb" alt="" width="64" height="64"></div>
+        <div>
+          <p class="dialog-product-name" id="order-summary-name">Mũthuri, brown</p>
+          <p class="dialog-product-meta" id="order-summary-meta">Woven leather loafer · KSh 4,000</p>
+        </div>
+      </div>
+
+      <form id="order-form">
+        <div class="form-grid">
+          <label class="field field-full" for="order-model">Style
+            <select name="model" id="order-model" required>
+              <option value="muthuri">Mũthuri, woven leather loafer</option>
+              <option value="mugendi">Mũgendi, two tone leather loafer</option>
+            </select>
+          </label>
+          <label class="field" for="order-colour">Colour
+            <select name="colour" id="order-colour" required>
+              <option value="brown">Brown</option>
+              <option value="black">Black</option>
+            </select>
+          </label>
+          <label class="field" for="order-size">EU size
+            <select name="size" id="order-size" required>
+              <option value="">Choose size</option>
+              <option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option>
+            </select>
+          </label>
+          <label class="field field-full" for="order-name">Your name
+            <input type="text" name="name" id="order-name" autocomplete="name" required>
+          </label>
+          <label class="field field-full" for="order-phone">Phone or WhatsApp number
+            <input type="tel" name="phone" id="order-phone" autocomplete="tel" inputmode="tel" placeholder="07xx xxx xxx" required>
+          </label>
+          <label class="field field-full" for="order-location">Delivery town or area
+            <input type="text" name="location" id="order-location" autocomplete="address-level2" required>
+          </label>
+          <label class="field field-full" for="order-notes"><span>Notes <span class="optional">(optional)</span></span>
+            <textarea name="notes" id="order-notes" rows="3" placeholder="Fit questions or preferred timing"></textarea>
+          </label>
+        </div>
+
+        <p class="dialog-terms">KSh 4,000 a pair. Delivery is charged separately if applicable. Making time is around five days and is confirmed with you before payment.</p>
+        <button class="btn btn-solid form-submit" type="submit">Send request on WhatsApp</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-disclaimer">This is a request, not a confirmed order. It is confirmed only when Iratu replies.</p>
+      </form>
+    </div>
   </dialog>
 </body>
 </html>
